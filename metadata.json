@@ -1,0 +1,16 @@
+{
+	"id": "minty-2026-comedy",
+	"name": "I never did think of a name for this thing",
+	"display_name": "Minty's Comedy",
+	"author": ["mys. minty wingedcatgirl"],
+	"description": "A mod filled with the OCs of various ArtFight users participating in the 2026 event",
+	"prefix": "mincom26",
+	"main_file": "main.lua",
+	"priority": 1,
+	"badge_colour": "F6833A",
+	"badge_text_colour": "000000",
+	"version": "0.0.1~WIP-20260708",
+	"dependencies": [
+			"Steamodded(>=1.0.0~BETA-0827)"
+	]
+}
