@@ -1,3 +1,5 @@
+-- lowkey i could probably just loc_txt this stuff, who's gonna translate something like this. and yet i persist
+
 return {
     descriptions = {
         Back={},
@@ -14,6 +16,12 @@ return {
                 text = {
                     "When entering blind, create",
                     "a random {C:attention}temporary{} consumable"
+                }
+            },
+            j_mincom26_thing = {
+                name = "Thing",
+                text = {
+                    "?"
                 }
             }
         },

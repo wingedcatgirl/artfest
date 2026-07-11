@@ -10,8 +10,17 @@ Comedy26.Attack = SMODS.Joker:extend{
             key = prefix.."_no_desc"
         end
         if self.calculate == Comedy26.Attack.calculate then
+            if not card.ability.extra.default_effect then
+                if G.SETTINGS.paused then
+                    card.ability.extra.default_effect = pseudorandom_element({ "mult", "chips", "xmult", "balance" },
+                        "no advancing the rng by looking at the collection :p")
+                else
+                    card.ability.extra.default_effect = pseudorandom_element({ "mult", "chips", "xmult", "balance" },
+                        "mincom_26_undefined_effect")
+                end
+            end
             local eff = card.ability.extra.default_effect
-            info_queue[#info_queue+1] = {set = "Other", key = "mincom_26_"..eff, specific_vars = {card.ability.extra[eff]}}
+            info_queue[#info_queue+1] = {set = "Other", key = "mincom26_default_"..eff, vars = {card.ability.extra[eff]}}
         end
         return {
             key = key
@@ -24,15 +33,6 @@ Comedy26.Attack = SMODS.Joker:extend{
     soul_pos = {
         x=9, y=0
     },
-    set_ability = function (self, card, initial, delay_sprites)
-        if self.calculate == Comedy26.Attack.calculate then
-            if card.area.config.collection then
-                card.ability.extra.default_effect = pseudorandom_element({"mult", "chips", "xmult", "balance"}, "no advancing the rng by looking at the collection :p")
-            else
-                card.ability.extra.default_effect = pseudorandom_element({"mult", "chips", "xmult", "balance"}, "mincom_26_undefined_effect")
-            end
-        end
-    end,
     config = {
         extra = {
             mult = 10,
@@ -51,7 +51,7 @@ Comedy26.Attack = SMODS.Joker:extend{
         }
         local text_cols = {
             comedy = "000000",
-            tragedy = "000000",
+            tragedy = "AAAAAA",
             mystery = "000000",
             ["Unspecified Artist"] = "FFFFFF"
         }

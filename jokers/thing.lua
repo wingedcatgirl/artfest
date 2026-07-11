@@ -1,27 +1,21 @@
 Comedy26.Attack {
-    key = "newjoker",
-    name = "New Joker",
-    --pronouns = "",
+    key = "thing",
+    name = "Thing",
+    pronouns = "he_any",
 
-    --[[
     atlas = 'jokers',
     pos = {
-        x = 0,
-        y = 0
+        x = 1,
+        y = 1
     },
     soul_pos = {
         x = 1,
-        y = 0
+        y = 2
     },
-    --]]
-
-    --[[
     credit26 = {
-        team = "",
-        name = ""
+        team = "Tragedy",
+        name = "RabAlienThing"
     },
-    --]]
-
     rarity = 1,
     cost = 5,
     unlocked = true,
@@ -30,7 +24,7 @@ Comedy26.Attack {
     perishable_compat = true,
     blueprint_compat = true,
     demicoloncompat = false,
-    
+
     --[[
     config = {
         extra = {
@@ -38,7 +32,7 @@ Comedy26.Attack {
         }
     },
     --]]
-
+    
     attributes = {
 
     },

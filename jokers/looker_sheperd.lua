@@ -29,7 +29,7 @@ Comedy26.Attack {
         }
     },
     attributes = {
-
+        "generation"
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key
