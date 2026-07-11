@@ -1,6 +1,7 @@
 Comedy26 = {}
 Comedy26.prefix = SMODS.current_mod.prefix
 Comedy26.config = SMODS.current_mod.config
+Comedy26.id = SMODS.current_mod.id
 local prefix = Comedy26.prefix
 
 Comedy26.Attack = SMODS.Joker:extend{
@@ -204,3 +205,61 @@ local function recursive_load(path)
 end
 
 recursive_load()
+
+SMODS.current_mod.menu_cards = function()
+    local cards, cards_left = {}, {}
+    local minty_key = "j_" .. Comedy26.prefix .. "_minty_title"
+
+    for k, v in pairs(G.P_CENTERS) do
+        if v.original_mod and v.original_mod.id == Comedy26.id and v.key ~= minty_key then
+            cards[#cards + 1] = k
+            cards_left[#cards_left + 1] = k
+        end
+    end
+
+    local menu_cards = {}
+
+    for i = 1, math.min(#cards+1, 4) do
+        if not next(cards_left) then break end
+        local edition = SMODS.poll_edition() or SMODS.poll_edition() --Roll with advantage!
+        local key = "sdkjfhgkldshgkl"
+        if i == 1 then
+            key = minty_key
+        else
+            local index = math.random(#cards_left)
+            key = cards[index]
+            table.remove(cards_left, index)
+        end
+        print(key, edition)
+        menu_cards[#menu_cards + 1] = { key = key, edition = edition }
+    end
+
+    local msg = "Mrrp :3"
+    menu_cards.func = function()
+        local minty
+        for i, v in ipairs(G.title_top.cards) do
+            if v.config.center and v.config.center.key == minty_key then
+                minty = v
+                v.click = function(self)
+                    G.FUNCS["openModUI_" .. self.config.center.original_mod.id]()
+                end
+                break
+            end
+        end
+        local frames = 0
+        G.E_MANAGER:add_event(Event {
+            func = function()
+                if not minty then
+                    print("mrrp?")
+                    return true
+                end
+                frames = frames + 1
+                if frames >= 150 then
+                    card_eval_status_text(minty, 'extra', nil, nil, nil, { message = msg, delay = 1.5 })
+                    return true
+                end
+            end, blocking = false, blockable = true
+        })
+    end
+    return menu_cards
+end

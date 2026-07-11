@@ -32,7 +32,7 @@ Comedy26.Attack {
         }
     },
     --]]
-    
+
     attributes = {
 
     },
@@ -50,7 +50,7 @@ Comedy26.Attack {
     
     --[[
     calculate = function(self, card, context)
-        -- Calculation goes here
+        -- Alien rabbit, affect hand leveling somehow?
     end
     --]]
 }
