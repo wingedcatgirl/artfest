@@ -27,7 +27,7 @@ Comedy26.Attack = SMODS.Joker:extend{
             key = key
         }
     end,
-    atlas = "jokers",
+    atlas = prefix.."_jokers",
     pos = {
         x=8, y=0
     },
@@ -207,19 +207,19 @@ end
 recursive_load()
 
 SMODS.current_mod.menu_cards = function()
-    local cards, cards_left = {}, {}
+    local cards_left = {}
     local minty_key = "j_" .. Comedy26.prefix .. "_minty_title"
 
     for k, v in pairs(G.P_CENTERS) do
         if v.original_mod and v.original_mod.id == Comedy26.id and v.key ~= minty_key then
-            cards[#cards + 1] = k
             cards_left[#cards_left + 1] = k
         end
     end
+    local count = #cards_left
 
     local menu_cards = {}
 
-    for i = 1, math.min(#cards+1, 4) do
+    for i = 1, math.min(count+1, 4) do
         if not next(cards_left) then break end
         local edition = SMODS.poll_edition() or SMODS.poll_edition() --Roll with advantage!
         local key = "sdkjfhgkldshgkl"
@@ -227,14 +227,18 @@ SMODS.current_mod.menu_cards = function()
             key = minty_key
         else
             local index = math.random(#cards_left)
-            key = cards[index]
+            key = cards_left[index]
             table.remove(cards_left, index)
         end
-        print(key, edition)
         menu_cards[#menu_cards + 1] = { key = key, edition = edition }
     end
 
-    local msg = "Mrrp :3"
+    local msgs = {
+        "Mrrp mew meow :3",
+        "I'm not even in this mod I'm just here for the title screen lmao",
+        "Daisy, Daisy... oh, that's not important.",
+        "I thought about localizing this but then I decided lmaooooooooo"
+    }
     menu_cards.func = function()
         local minty
         for i, v in ipairs(G.title_top.cards) do
@@ -255,7 +259,7 @@ SMODS.current_mod.menu_cards = function()
                 end
                 frames = frames + 1
                 if frames >= 150 then
-                    card_eval_status_text(minty, 'extra', nil, nil, nil, { message = msg, delay = 1.5 })
+                    card_eval_status_text(minty, 'extra', nil, nil, nil, { message = msgs[math.random(#msgs)], delay = 2 })
                     return true
                 end
             end, blocking = false, blockable = true

@@ -5,10 +5,11 @@ return {
         Back={},
         Joker={
             mincom26_no_desc = {
-                name = "Not found",
+                name = "Unknown",
                 text = {
                     "This Joker's localization",
-                    "data hasn't been written yet"
+                    "data hasn't been written yet",
+                    "(the base plate should have their name lmao)"
                 }
             },
             j_mincom26_looker_shepard = {
@@ -23,7 +24,21 @@ return {
                 text = {
                     "?"
                 }
-            }
+            },
+            j_mincom26_rose = {
+                name = "Rosé Fleur",
+                text = {
+                    "Transmute a random",
+                    "scored card into",
+                    "a {C:attention}Gold{} card"
+                }
+            },
+            j_mincom26_template = {
+                name = "Name",
+                text = {
+                    "Desc"
+                }
+            },
         },
         Other = {
             mincom26_default_mult = {
