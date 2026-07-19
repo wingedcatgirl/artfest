@@ -39,6 +39,11 @@ SMODS.current_mod.config_tab = function()
                         label = { "Unlock all (local)" },
                         colour = G.C.GREY
                     }),
+                    create_toggle({
+                        label = "Violate Geneva conventions",
+                        ref_table = Comedy26.config,
+                        ref_value = 'violate_geneva_conventions',
+                    }),
                     --[[
                     create_toggle({
                         label = "Checkbox",

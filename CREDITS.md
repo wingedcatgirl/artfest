@@ -4,3 +4,4 @@
 - [Rosé](https://artfight.net/character/4731699.rose-fleur)
 - [Sparks](https://artfight.net/character/10281494.looker-sparks-sheperd)
 - [Thing](https://artfight.net/character/7492531.thing)
+- [Vivica](https://artfight.net/character/8517500.vivica)

@@ -221,7 +221,9 @@ SMODS.current_mod.menu_cards = function()
 
     for i = 1, math.min(count+1, 4) do
         if not next(cards_left) then break end
+        print(tprint(cards_left))
         local edition = SMODS.poll_edition() or SMODS.poll_edition() --Roll with advantage!
+        math.randomseed(os.time()+i) --Oops poll_edition accidentally stomped our unpredictability!
         local key = "sdkjfhgkldshgkl"
         if i == 1 then
             key = minty_key
@@ -229,6 +231,7 @@ SMODS.current_mod.menu_cards = function()
             local index = math.random(#cards_left)
             key = cards_left[index]
             table.remove(cards_left, index)
+            print(index)
         end
         menu_cards[#menu_cards + 1] = { key = key, edition = edition }
     end
@@ -237,7 +240,13 @@ SMODS.current_mod.menu_cards = function()
         "Mrrp mew meow :3",
         "I'm not even in this mod I'm just here for the title screen lmao",
         "Daisy, Daisy... oh, that's not important.",
-        "I thought about localizing this but then I decided lmaooooooooo"
+        "I thought about localizing these quips but then I decided lmaooooooooo",
+        "Also play Bibliography and/or Menthol if you feel like it!",
+        "Also play More Fluff if you feel like it!",
+        "Also play KCVanilla if you feel like it!",
+        "Also play Aikoyori's Shenanigans if you feel like it!",
+        "Also play Paperback if you feel like it!",
+        "Also play Bad Director if you feel like it!",
     }
     menu_cards.func = function()
         local minty
