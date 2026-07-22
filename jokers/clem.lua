@@ -1,26 +1,22 @@
 Comedy26.Attack {
-    key = "newjoker",
-    name = "New Joker",
-    --pronouns = "",
+    key = "clem",
+    name = "Clementine",
+    pronouns = "he_they",
 
-    --[[
     atlas = 'jokers',
     pos = {
-        x = 0,
+        x = 6,
         y = 1
     },
     soul_pos = {
-        x = 1,
+        x = 6,
         y = 2
     },
-    --]]
 
-    --[[
     credit26 = {
-        name = "",
-        team = "",
+        team = "Tragedy",
+        name = "nightlightyyy"
     },
-    --]]
 
     rarity = 1,
     cost = 5,
