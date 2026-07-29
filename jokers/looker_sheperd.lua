@@ -1,4 +1,4 @@
-Comedy26.Attack {
+Mintfight.Attack {
     key = "looker_shepard",
     name = "Looker \"Sparks\" Sheperd",
     pronouns = "he_him",
@@ -11,7 +11,7 @@ Comedy26.Attack {
         x = 0,
         y = 2
     },
-    credit26 = {
+    artfight_credit = {
         team = "Mystery",
         name = "SpoxxieRuckus"
     },
@@ -34,7 +34,7 @@ Comedy26.Attack {
     loc_vars = function(self, info_queue, card)
         local key = self.key
 
-        info_queue[#info_queue + 1] = { set = "Other", key = "mincom26_temporary", vars = {} }
+        info_queue[#info_queue + 1] = { set = "Other", key = "mintfight_temporary", vars = {} }
 
         return {
             key = key,
@@ -53,7 +53,7 @@ Comedy26.Attack {
                             SMODS.add_card {
                                 set = "Consumeables",
                                 force_stickers = {
-                                    "mincom26_temporary"
+                                    "mintfight_temporary"
                                 },
                                 soulable = true
                             }

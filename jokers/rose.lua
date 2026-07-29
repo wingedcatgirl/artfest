@@ -1,4 +1,4 @@
-Comedy26.Attack {
+Mintfight.Attack {
     key = "rose",
     name = "Rosé Fleur",
     pronouns = "she_her",
@@ -11,7 +11,7 @@ Comedy26.Attack {
         x = 2,
         y = 2
     },
-    credit26 = {
+    artfight_credit = {
         team = "Mystery",
         name = "projectpurr"
     },

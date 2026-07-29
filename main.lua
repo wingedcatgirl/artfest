@@ -1,27 +1,27 @@
-Comedy26 = {}
-Comedy26.prefix = SMODS.current_mod.prefix
-Comedy26.config = SMODS.current_mod.config
-Comedy26.id = SMODS.current_mod.id
-local prefix = Comedy26.prefix
+Mintfight = {}
+Mintfight.prefix = SMODS.current_mod.prefix
+Mintfight.config = SMODS.current_mod.config
+Mintfight.id = SMODS.current_mod.id
+local prefix = Mintfight.prefix
 
-Comedy26.Attack = SMODS.Joker:extend{
+Mintfight.Attack = SMODS.Joker:extend{
     loc_vars = function (self, info_queue, card)
         local key = self.key
         if not G.localization.descriptions[self.set][self.key] then
             key = prefix.."_no_desc"
         end
-        if self.calculate == Comedy26.Attack.calculate then
+        if self.calculate == Mintfight.Attack.calculate then
             if not card.ability.extra.default_effect then
                 if G.SETTINGS.paused then
                     card.ability.extra.default_effect = pseudorandom_element({ "mult", "chips", "xmult", "balance" },
                         "no advancing the rng by looking at the collection :p")
                 else
                     card.ability.extra.default_effect = pseudorandom_element({ "mult", "chips", "xmult", "balance" },
-                        "mincom_26_undefined_effect")
+                        "mintfight_undefined_effect")
                 end
             end
             local eff = card.ability.extra.default_effect
-            info_queue[#info_queue+1] = {set = "Other", key = "mincom26_default_"..eff, vars = {card.ability.extra[eff]}}
+            info_queue[#info_queue+1] = {set = "Other", key = "mintfight_default_"..eff, vars = {card.ability.extra[eff]}}
         end
         return {
             key = key
@@ -57,10 +57,10 @@ Comedy26.Attack = SMODS.Joker:extend{
             ["Unspecified Artist"] = "FFFFFF"
         }
 
-        local team = (self.credit26 or {}).team or "unspecified"
-        local artist = (self.credit26 or {}).name or "unspecified"
+        local team = (self.artfight_credit or {}).team or "unspecified"
+        local artist = (self.artfight_credit or {}).name or "unspecified"
         team = team:lower()
-        local team_key = "mincom26_team_"..team
+        local team_key = "mintfight_team_"..team
         badges[#badges+1] = create_badge({artist, localize(team_key)}, HEX(badge_cols[artist] or badge_cols[team] or "CA7CA7"), HEX(text_cols[artist] or text_cols[team] or "FFFFFF"), 1)
     end,
     calculate = function (self, card, context)
@@ -208,10 +208,10 @@ recursive_load()
 
 SMODS.current_mod.menu_cards = function()
     local cards_left = {}
-    local minty_key = "j_" .. Comedy26.prefix .. "_minty_title"
+    local minty_key = "j_" .. Mintfight.prefix .. "_minty_title"
 
     for k, v in pairs(G.P_CENTERS) do
-        if v.original_mod and v.original_mod.id == Comedy26.id and v.key ~= minty_key then
+        if v.original_mod and v.original_mod.id == Mintfight.id and v.key ~= minty_key then
             cards_left[#cards_left + 1] = k
         end
     end

@@ -1,4 +1,4 @@
-Comedy26.Attack {
+Mintfight.Attack {
     key = "newjoker",
     name = "New Joker",
     --pronouns = "",
@@ -16,7 +16,7 @@ Comedy26.Attack {
     --]]
 
     --[[
-    credit26 = {
+    artfight_credit = {
         name = "",
         team = "",
     },

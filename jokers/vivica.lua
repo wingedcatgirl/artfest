@@ -1,4 +1,4 @@
-Comedy26.Attack {
+Mintfight.Attack {
     key = "vivica",
     name = "Vivica",
     pronouns = "she_her",
@@ -13,7 +13,7 @@ Comedy26.Attack {
         y = 2
     },
     set_sprites = function (self, card, front)
-        if Comedy26.config.violate_geneva_conventions then
+        if Mintfight.config.violate_geneva_conventions then
             self.soul_pos = {x=5, y=2}
         else
             self.soul_pos = {x=4, y=2}
@@ -21,9 +21,9 @@ Comedy26.Attack {
     end,
     update = function (self, card, dt)
         if not self.soul_pos then return end
-        if Comedy26.config.violate_geneva_conventions and self.soul_pos.x ~= 5 then
+        if Mintfight.config.violate_geneva_conventions and self.soul_pos.x ~= 5 then
             self.soul_pos.x = 5
-        elseif not Comedy26.config.violate_geneva_conventions and self.soul_pos.x ~= 4 then
+        elseif not Mintfight.config.violate_geneva_conventions and self.soul_pos.x ~= 4 then
             self.soul_pos.x = 4
         else
             return
@@ -36,7 +36,7 @@ Comedy26.Attack {
         })
     end,
 
-    credit26 = {
+    artfight_credit = {
         team = "Tragedy",
         name = "mikufanclub"
     },
@@ -61,21 +61,65 @@ Comedy26.Attack {
     attributes = {
 
     },
-    --[[
     loc_vars = function(self, info_queue, card)
         local key = self.key
+        local main_end
+        if card.area == G.jokers.cards then
+            local colour = mix_colours(G.C.GREEN, G.C.JOKER_GREY, 0.8)
+            local text = localize("k_compatible")
+            local my_pos
+            for i, v in ipairs(G.jokers.cards) do
+                if v == card then
+                    my_pos = i
+                    break
+                end
+            end
+            if not my_pos or my_pos == 1 then
+                colour = mix_colours(G.C.RED, G.C.JOKER_GREY, 0.8)
+                text = localize("k_incompatible")
+            end
+            main_end = {
+                {
+                    n = G.UIT.C,
+                    config = { align = "bm", minh = 0.4 },
+                    nodes = {
+                        {
+                            n = G.UIT.C,
+                            config = { align = "m", colour = colour, r = 0.05, padding = 0.06, },
+                            nodes = {
+                                { n = G.UIT.T, config = { text = text, colour = G.C.UI.TEXT_LIGHT, scale = 0.32 * 0.8 } },
+                            }
+                        }
+                    }
+                } }
+        end
+
+
         return {
             key = key,
-            vars = {
-                
-            }
+            main_end = main_end
         }
     end,
-    --]]
 
-    --[[
     calculate = function(self, card, context)
-        -- Prevent death and destroy joker to the left, bypassing eternal
+        if context.game_over then
+            local my_pos
+            for i, v in ipairs(G.jokers.cards) do
+                if v == card then
+                    my_pos = i
+                    break
+                end
+            end
+
+            if my_pos and my_pos > 1 and G.jokers.cards[my_pos-1] then
+                SMODS.destroy_cards(G.jokers.cards[my_pos-1],{
+                    bypass_eternal = true
+                })
+
+                return {
+                    saved = true
+                }
+            end
+        end
     end
-    --]]
 }

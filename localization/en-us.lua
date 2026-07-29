@@ -4,7 +4,7 @@ return {
     descriptions = {
         Back={},
         Joker={
-            mincom26_no_desc = {
+            mintfight_no_desc = {
                 name = "Unknown",
                 text = {
                     "This Joker's localization",
@@ -12,20 +12,21 @@ return {
                     "(the base plate should have their name lmao)"
                 }
             },
-            j_mincom26_looker_shepard = {
+            j_mintfight_looker_shepard = {
                 name = "Looker \"Sparks\" Sheperd",
                 text = {
                     "When entering blind, create",
                     "a random {C:attention}temporary{} consumable"
                 }
             },
-            j_mincom26_thing = {
+            j_mintfight_thing = {
                 name = "Thing",
                 text = {
-                    "?"
+                    "When {C:attention}leveling up{} any hand,",
+                    "{C:green}#1# in #2#{} chance to level up again",
                 }
             },
-            j_mincom26_rose = {
+            j_mintfight_rose = {
                 name = "Rosé Fleur",
                 text = {
                     "Transmute a random",
@@ -33,7 +34,24 @@ return {
                     "a {C:attention}Gold{} card"
                 }
             },
-            j_mincom26_template = {
+            j_mintfight_kaya = {
+                name = "Kaya",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if poker hand",
+                    "contains any {C:attention}Aces{}",
+                    "or {C:white,X:mult}X#2#{} Mult if poker hand",
+                    "contains only {C:attention}Aces{}"
+                }
+            },
+            j_mintfight_vivica = {
+                name = "Vivica",
+                text = {
+                    "Prevents Death by destroying",
+                    "Joker to the left,",
+                    "bypassing Eternal"
+                }
+            },
+            j_mintfight_template = {
                 name = "Name",
                 text = {
                     "Desc"
@@ -41,28 +59,28 @@ return {
             },
         },
         Other = {
-            mincom26_default_mult = {
+            mintfight_default_mult = {
                 name = "Default Mult",
                 text = {
                     "No effect defined,",
                     "will give {C:mult}+#1#{} Mult"
                 }
             },
-            mincom26_default_chips = {
+            mintfight_default_chips = {
                 name = "Default Chips",
                 text = {
                     "No effect defined,",
                     "will give {C:chips}+#1#{} Chips"
                 }
             },
-            mincom26_default_xmult = {
+            mintfight_default_xmult = {
                 name = "Default xMult",
                 text = {
                     "No effect defined,",
                     "will give {X:mult,C:white}X#1#{} Mult"
                 }
             },
-            mincom26_default_balance = {
+            mintfight_default_balance = {
                 name = "Default Balance",
                 text = {
                     "No effect defined,",
@@ -70,7 +88,7 @@ return {
                     "of Chips and Mult"
                 }
             },
-            mincom26_temporary = {
+            mintfight_temporary = {
                 name = "Temporary",
                 text = {
                     "Vanishes at",
@@ -83,12 +101,12 @@ return {
         achievement_descriptions={},
         achievement_names={},
         dictionary={
-            mincom26_team_comedy = "Team Comedy",
-            mincom26_team_tragedy = "Team Tragedy",
-            mincom26_team_mystery = "Team Mystery",
+            mintfight_team_comedy = "Team Comedy",
+            mintfight_team_tragedy = "Team Tragedy",
+            mintfight_team_mystery = "Team Mystery",
         },
         labels={
-            mincom26_temporary = "Temporary",
+            mintfight_temporary = "Temporary",
         },
         v_dictionary={},
         v_text={},

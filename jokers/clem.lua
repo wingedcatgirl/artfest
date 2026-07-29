@@ -1,4 +1,4 @@
-Comedy26.Attack {
+Mintfight.Attack {
     key = "clem",
     name = "Clementine",
     pronouns = "he_they",
@@ -13,7 +13,7 @@ Comedy26.Attack {
         y = 2
     },
 
-    credit26 = {
+    artfight_credit = {
         team = "Tragedy",
         name = "nightlightyyy"
     },
