@@ -197,7 +197,7 @@ local function recursive_load(path)
             if v.type == "directory" then
                 recursive_load(path..v.name.."/")
             else
-                print(path..filename)
+                print("Loading "..path..filename)
                 assert(SMODS.load_file(path..filename))()
             end
         end
@@ -219,13 +219,13 @@ SMODS.current_mod.menu_cards = function()
 
     local menu_cards = {}
 
-    for i = 1, math.min(count+1, 4) do
+    for i = 1, 4 do
         if not next(cards_left) then break end
         print(tprint(cards_left))
         local edition = SMODS.poll_edition() or SMODS.poll_edition() --Roll with advantage!
-        math.randomseed(os.time()+i) --Oops poll_edition accidentally stomped our unpredictability!
+        math.randomseed(os.time()+(i*37)) --Oops poll_edition accidentally stomped our unpredictability!
         local key = "sdkjfhgkldshgkl"
-        if i == 1 then
+        if i == 4 then
             key = minty_key
         else
             local index = math.random(#cards_left)
@@ -236,17 +236,22 @@ SMODS.current_mod.menu_cards = function()
         menu_cards[#menu_cards + 1] = { key = key, edition = edition }
     end
 
+    local other_mods = {
+        "Bibliography and/or Menthol",
+        "More Fluff",
+        "KCVanilla",
+        "Aikoyori's Shenanigans",
+        "Paperback",
+        "Bad Director",
+    }
+    local other_mod = other_mods[math.random(1, #other_mods)]
+
     local msgs = {
         "Mrrp mew meow :3",
         "I'm not even in this mod I'm just here for the title screen lmao",
         "Daisy, Daisy... oh, that's not important.",
         "I thought about localizing these quips but then I decided lmaooooooooo",
-        "Also play Bibliography and/or Menthol if you feel like it!",
-        "Also play More Fluff if you feel like it!",
-        "Also play KCVanilla if you feel like it!",
-        "Also play Aikoyori's Shenanigans if you feel like it!",
-        "Also play Paperback if you feel like it!",
-        "Also play Bad Director if you feel like it!",
+        "Also play "..other_mod.." if you feel like it!",
     }
     menu_cards.func = function()
         local minty

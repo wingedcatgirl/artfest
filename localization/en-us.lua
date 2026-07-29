@@ -51,6 +51,14 @@ return {
                     "bypassing Eternal"
                 }
             },
+            j_mintfight_duck = {
+                name = "Duck",
+                text = {
+                    "If any card would be destroyed,",
+                    "destroy Duck instead",
+                    "Total torment: {C:red}#1#{}"
+                }
+            },
             j_mintfight_template = {
                 name = "Name",
                 text = {
@@ -104,6 +112,7 @@ return {
             mintfight_team_comedy = "Team Comedy",
             mintfight_team_tragedy = "Team Tragedy",
             mintfight_team_mystery = "Team Mystery",
+            mintfight_torment_ex = "Tormented!",
         },
         labels={
             mintfight_temporary = "Temporary",

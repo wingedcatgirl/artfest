@@ -27,32 +27,50 @@ Mintfight.Attack {
     blueprint_compat = true,
     demicoloncompat = false,
     
-    --[[
     config = {
         extra = {
             
         }
     },
-    --]]
 
     attributes = {
 
     },
-    --[[
     loc_vars = function(self, info_queue, card)
         local key = self.key
+        if not card.ability.extra.fallback_torment then
+            card.ability.extra.fallback_torment = math.random(3,17)
+        end
         return {
             key = key,
             vars = {
-                
+                G.GAME.mintfight_duck_torment or card.ability.extra.fallback_torment
             }
         }
     end,
-    --]]
+    get_weight = function (self, weight)
+        local gravity = 1
+        if G.GAME and G.GAME.mintfight_duck_torment then
+            gravity = math.max(gravity, math.log(G.GAME.mintfight_duck_torment, 6))
+        end
+
+        return weight * gravity
+    end,
     
-    --[[
     calculate = function(self, card, context)
-        -- Calculation goes here
+        if context.joker_type_destroyed and card.ability.extra.left > 0 then
+            if context.card ~= card and context.card.config.center.set == "Joker" and not card.blocking then
+                card.blocking = true
+                return {
+                    no_destroy = true,
+                    extra = {
+                        func = function ()
+                            SMODS.calculate_effect({message = localize("mintfight_tormented_ex")}, card)
+                            SMODS.destroy_cards(card)
+                        end
+                    }
+                }
+            end
+        end
     end
-    --]]
 }
