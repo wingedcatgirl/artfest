@@ -243,14 +243,16 @@ SMODS.current_mod.menu_cards = function()
         "Aikoyori's Shenanigans",
         "Paperback",
         "Bad Director",
+        "Wormhole",
+        "Smallpox",
     }
     local other_mod = other_mods[math.random(1, #other_mods)]
 
     local msgs = {
         "Mrrp mew meow :3",
-        "I'm not even in this mod I'm just here for the title screen lmao",
-        "Daisy, Daisy... oh, that's not important.",
-        "I thought about localizing these quips but then I decided lmaooooooooo",
+        "I'm actually from Bibliography, I'm just visiting for the title screen lmao",
+        "Daisy, Daisy, give me your answer, do...",
+        "I thought about localizing these quips but then I decided lmaooooooooo no",
         "Also play "..other_mod.." if you feel like it!",
     }
     menu_cards.func = function()

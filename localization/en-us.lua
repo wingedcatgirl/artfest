@@ -59,6 +59,22 @@ return {
                     "Total torment: {C:red}#1#{}"
                 }
             },
+            j_mintfight_amara = {
+                name = "Amara Bisan Desta",
+                text = {
+                    "First unscored card each",
+                    "round becomes an {C:attention}Ace{}"
+                }
+            },
+            j_mintfight_amara_alt = {
+                name = "Amara Bisan Desta",
+                text = {
+                    "First unscored card each",
+                    "round becomes an {C:attention}Ace{}",
+                    "Also finds a {C:attention}Playwright{}",
+                    "Joker when acquired"
+                }
+            },
             j_mintfight_template = {
                 name = "Name",
                 text = {
@@ -113,6 +129,7 @@ return {
             mintfight_team_tragedy = "Team Tragedy",
             mintfight_team_mystery = "Team Mystery",
             mintfight_torment_ex = "Tormented!",
+            mintfight_ready_ex = "Ready!",
         },
         labels={
             mintfight_temporary = "Temporary",

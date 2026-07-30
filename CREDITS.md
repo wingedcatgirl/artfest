@@ -1,5 +1,6 @@
 <del>also a convenient reference for me when i submit the attack, because i will definitely forget</del>
 
+- [Amara](https://artfight.net/character/6646403.amara-bisan-desta-oc)
 - [Clementine](https://artfight.net/character/8221064.clementine-tadc) <!-- Check if he should be scored as a simple design -->
 - [Duck](https://artfight.net/character/9698669.rubber-ducky)
 - [Kaya](https://artfight.net/character/10862985.kaya)
