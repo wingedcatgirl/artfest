@@ -7,11 +7,11 @@ Mintfight.Attack {
     atlas = 'jokers',
     pos = {
         x = 0,
-        y = 1
+        y = 3
     },
     soul_pos = {
-        x = 1,
-        y = 2
+        x = 0,
+        y = 4
     },
     --]]
 

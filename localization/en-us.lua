@@ -75,6 +75,16 @@ return {
                     "Joker when acquired"
                 }
             },
+            j_mintfight_babble = {
+                name = "Babble the Rabbit",
+                text = {
+                    "Retrigger a random card in",
+                    "poker hand for each card",
+                    "in poker hand, if poker hand",
+                    "contains at least {C:attention}#1#{} cards",
+                    "{C:inactive,s:0.8}... Poke(r hand)."
+                }
+            },
             j_mintfight_template = {
                 name = "Name",
                 text = {
