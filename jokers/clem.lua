@@ -38,6 +38,7 @@ Mintfight.Attack {
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key
+        info_queue[#info_queue + 1] = { set = "Other", key = "mintfight_temporary", vars = {} }
         return {
             key = key,
             vars = {

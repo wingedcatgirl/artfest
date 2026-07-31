@@ -165,6 +165,13 @@ SMODS.Atlas{
     py = 95,
 }
 
+SMODS.Atlas{
+    key = "backs",
+    path = "backs.png",
+    px = 71,
+    py = 95,
+}
+
 print("starting recursive load")
 ---@param path? string
 local function recursive_load(path)
@@ -226,7 +233,7 @@ SMODS.current_mod.menu_cards = function()
     local minty_key = "j_" .. Mintfight.prefix .. "_minty_title"
 
     for k, v in pairs(G.P_CENTERS) do
-        if v.original_mod and v.original_mod.id == Mintfight.id and v.key ~= minty_key then
+        if v.set == "Joker" and v.original_mod and v.original_mod.id == Mintfight.id and v.key ~= minty_key then
             cards_left[#cards_left + 1] = k
         end
     end

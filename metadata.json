@@ -1,7 +1,7 @@
 {
 	"id": "minty-artfight",
-	"name": "I never did think of a name for this thing",
-	"display_name": "Minty's Artfest",
+	"name": "Minty's Art(fight)fest",
+	"display_name": "Artfest",
 	"author": ["mys. minty wingedcatgirl"],
 	"description": "A mod filled with the OCs of various ArtFight users",
 	"prefix": "mintfight",
@@ -9,7 +9,7 @@
 	"priority": 1,
 	"badge_colour": "F6833A",
 	"badge_text_colour": "000000",
-	"version": "0.0.1~WIP-20260710",
+	"version": "1.0.0~pre",
 	"dependencies": [
 			"Steamodded(>=1.0.0~BETA-0827)"
 	]

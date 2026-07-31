@@ -101,6 +101,24 @@ return {
                     "of random owned playing cards"
                 }
             },
+            j_mintfight_moirai = {
+                name = "Moirai",
+                text = {
+                    "{C:attention}Remembers{} last destroyed card",
+                    "When setting blind, creates",
+                    "a temporary copy of that card",
+                    "Remembered card: #5##1#"
+                }
+            },
+            j_mintfight_moirai_pc = {
+                name = "Moirai",
+                text = {
+                    "{C:attention}Remembers{} last destroyed card",
+                    "When setting blind, creates",
+                    "a temporary copy of that card",
+                    "Remembered card: #5##2##4#{V:1}#3#{}#6#"
+                }
+            },
             j_mintfight_template = {
                 name = "Name",
                 text = {
@@ -154,8 +172,9 @@ return {
             mintfight_team_comedy = "Team Comedy",
             mintfight_team_tragedy = "Team Tragedy",
             mintfight_team_mystery = "Team Mystery",
-            mintfight_torment_ex = "Tormented!",
+            mintfight_tormented_ex = "Tormented!",
             mintfight_ready_ex = "Ready!",
+            mintfight_saved_by_vivica = "Saved by Vivica's scalpel"
         },
         labels={
             mintfight_temporary = "Temporary",

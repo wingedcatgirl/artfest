@@ -58,15 +58,16 @@ Mintfight.Attack {
     end,
     
     calculate = function(self, card, context)
-        if context.joker_type_destroyed and card.ability.extra.left > 0 then
-            if context.card ~= card and context.card.config.center.set == "Joker" and not card.blocking then
+        if context.joker_type_destroyed then
+            if context.card ~= card and not context.card.ability.mintfight_temporary and context.card.config.center.set == "Joker" and not card.blocking then
                 card.blocking = true
                 return {
                     no_destroy = true,
                     extra = {
                         func = function ()
                             SMODS.calculate_effect({message = localize("mintfight_tormented_ex")}, card)
-                            SMODS.destroy_cards(card)
+                            SMODS.destroy_cards(card, {immediate = true})
+                            G.GAME.mintfight_duck_torment = G.GAME.mintfight_duck_torment + pseudorandom("mintfight_duck_torment", 3, 17)
                         end
                     }
                 }

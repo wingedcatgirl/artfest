@@ -64,9 +64,9 @@ Mintfight.Attack {
     loc_vars = function(self, info_queue, card)
         local key = self.key
         local main_end
-        if G.jokers and card.area == G.jokers.cards then
-            local colour = mix_colours(G.C.GREEN, G.C.JOKER_GREY, 0.8)
-            local text = localize("k_compatible")
+        local colour = mix_colours(G.C.GREEN, G.C.JOKER_GREY, 0.8)
+        local text = localize("k_compatible")
+        if G.jokers and card.area == G.jokers then
             local my_pos
             for i, v in ipairs(G.jokers.cards) do
                 if v == card then
@@ -78,6 +78,7 @@ Mintfight.Attack {
                 colour = mix_colours(G.C.RED, G.C.JOKER_GREY, 0.8)
                 text = localize("k_incompatible")
             end
+            print("creating main end...")
             main_end = {
                 {
                     n = G.UIT.C,
@@ -115,9 +116,15 @@ Mintfight.Attack {
                 SMODS.destroy_cards(G.jokers.cards[my_pos-1],{
                     bypass_eternal = true
                 })
+                G.E_MANAGER:add_event(Event{
+                    func = function ()
+                        play_sound('slice1', 0.96+math.random()*0.08)
+                        return true
+                    end
+                })
 
                 return {
-                    saved = true
+                    saved = "mintfight_saved_by_vivica"
                 }
             end
         end

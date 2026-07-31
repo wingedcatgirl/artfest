@@ -14,10 +14,8 @@ end
 
 SMODS.Back{
     key = "art",
-    --[[
     atlas = "backs",
     pos = {x=0, y=0},
-    --]]
     calculate = function (self, back, context)
         --[[ --I can't figure out what I'm trying to do with this math...
         if not Mintfight.joker_count then
