@@ -46,9 +46,9 @@ return {
             j_mintfight_vivica = {
                 name = "Vivica",
                 text = {
-                    "Prevents Death by destroying",
-                    "Joker to the left,",
-                    "bypassing Eternal"
+                    "Prevents Death by",
+                    "destroying Joker to the",
+                    "left, bypassing Eternal"
                 }
             },
             j_mintfight_duck = {

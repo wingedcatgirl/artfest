@@ -221,7 +221,7 @@ SMODS.current_mod.menu_cards = function()
 
     for i = 1, 4 do
         if not next(cards_left) then break end
-        print(tprint(cards_left))
+
         local edition = SMODS.poll_edition() or SMODS.poll_edition() --Roll with advantage!
         math.randomseed(os.time()+(i*37)) --Oops poll_edition accidentally stomped our unpredictability!
         local key = "sdkjfhgkldshgkl"

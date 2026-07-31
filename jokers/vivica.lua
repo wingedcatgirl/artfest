@@ -64,7 +64,7 @@ Mintfight.Attack {
     loc_vars = function(self, info_queue, card)
         local key = self.key
         local main_end
-        if card.area == G.jokers.cards then
+        if G.jokers and card.area == G.jokers.cards then
             local colour = mix_colours(G.C.GREEN, G.C.JOKER_GREY, 0.8)
             local text = localize("k_compatible")
             local my_pos
