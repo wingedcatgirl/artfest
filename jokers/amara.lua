@@ -71,7 +71,8 @@ Mintfight.Attack {
 
         if another and another ~= "j_joker" then
             SMODS.add_card{
-                key = another
+                key = another,
+                area = G.jokers
             }
         end
     end,
