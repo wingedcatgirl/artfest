@@ -148,7 +148,13 @@ SMODS.current_mod.optional_features = function ()
         cardareas = {
             deck = true,
             discard = true
-        }
+        },
+        object_weights = true,
+
+            --Maybe next year.
+        --quantum_enhancements = true,
+        --retrigger_joker = true,
+        --post_trigger = true,
     }
 end
 

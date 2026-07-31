@@ -2,7 +2,15 @@
 
 return {
     descriptions = {
-        Back={},
+        Back={
+            b_mintfight_art = {
+                name = "Art(fight) Deck",
+                text = {
+                    "Artfight attacks appear",
+                    "much more frequently"
+                }
+            }
+        },
         Joker={
             mintfight_no_desc = {
                 name = "Unknown",
