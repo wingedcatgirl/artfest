@@ -1,10 +1,12 @@
+---@param center table
+---@return boolean
 local function is_artfight_joker(center)
     if not (center and center.original_mod) then return false end
 
     local ids = {
         ["minty-artfight"] = true,
         playwright = true,
-
+        --and point me to any other attacks in the form of working balala mods and i'll add them here
     }
 
     return ids[center.original_mod.id] or false
