@@ -8,8 +8,9 @@ SMODS.Sticker{
     end,
     calculate= function (self, card, context)
         if card.sell_cost ~= 0 then card.sell_cost = 0 end
-        if context.end_of_round and context.main_eval then
-            SMODS.destroy_cards(card, {pinch_anim = true})
+        local ispc = SMODS.is_playing_card(card)
+        if (not ispc and context.end_of_round) or (ispc and context.playing_card_end_of_round) then
+            SMODS.destroy_cards(card, {pinch_anim = not SMODS.is_playing_card(card)})
         end
     end
 }

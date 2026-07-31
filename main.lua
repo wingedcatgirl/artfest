@@ -143,6 +143,15 @@ Mintfight.Attack = SMODS.Joker:extend{
     end
 }
 
+SMODS.current_mod.optional_features = function ()
+    return {
+        cardareas = {
+            deck = true,
+            discard = true
+        }
+    }
+end
+
 SMODS.Atlas{
     key = "jokers",
     path = "jokers.png",
@@ -231,7 +240,6 @@ SMODS.current_mod.menu_cards = function()
             local index = math.random(#cards_left)
             key = cards_left[index]
             table.remove(cards_left, index)
-            print(index)
         end
         menu_cards[#menu_cards + 1] = { key = key, edition = edition }
     end

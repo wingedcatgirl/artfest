@@ -85,6 +85,14 @@ return {
                     "{C:inactive,s:0.8}... Poke(r hand)."
                 }
             },
+            j_mintfight_clem = {
+                name = "Clementine",
+                text = {
+                    "When entering blind, create",
+                    "#1# temporary improved copies",
+                    "of random owned playing cards"
+                }
+            },
             j_mintfight_template = {
                 name = "Name",
                 text = {
