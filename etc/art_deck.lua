@@ -32,7 +32,10 @@ SMODS.Back{
             for i,v in ipairs(context.pool) do
                 local center = G.P_CENTERS[v.key]
                 if is_artfight_joker(center) then
-                    v.weight = v.weight * 3
+                    v.weight = v.weight * 2
+                    if tostring(os.date("*t").year) == v.artfight_credit.year then
+                        v.weight = v.weight * 1.5
+                    end
                 end
             end
         end
