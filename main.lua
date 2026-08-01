@@ -63,6 +63,7 @@ Mintfight.Attack = SMODS.Joker:extend{
         local team_key = "mintfight_team_"..team
         badges[#badges+1] = create_badge({artist, localize(team_key)}, HEX(badge_cols[artist] or badge_cols[team] or "CA7CA7"), HEX(text_cols[artist] or text_cols[team] or "FFFFFF"), 1)
     end,
+    hpot_unbreedable = true,
     calculate = function (self, card, context)
         if context.joker_main then
             if not card.ability.extra.default_effect then
