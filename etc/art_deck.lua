@@ -33,7 +33,7 @@ SMODS.Back{
                 local center = G.P_CENTERS[v.key]
                 if is_artfight_joker(center) then
                     v.weight = v.weight * 2
-                    if tostring(os.date("*t").year) == v.artfight_credit.year then
+                    if v.artfight_credit and tostring(os.date("*t").year) == v.artfight_credit.year then
                         v.weight = v.weight * 1.5
                     end
                 end
