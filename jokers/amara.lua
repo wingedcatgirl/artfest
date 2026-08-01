@@ -12,21 +12,22 @@ Mintfight.Attack {
         x = 8,
         y = 2
     },
-    
+
     artfight_credit = {
         name = "marisa",
         team = "Tragedy",
+        year = "2026",
     },
 
     rarity = 1,
-    cost = 5,
+    cost = 6,
     unlocked = true,
     discovered = false,
     eternal_compat = true,
     perishable_compat = true,
-    blueprint_compat = true,
+    blueprint_compat = false,
     demicoloncompat = false,
-    
+
     config = {
         extra = {
             ready = true
@@ -34,7 +35,7 @@ Mintfight.Attack {
     },
 
     attributes = {
-
+        "ace", "modify_card", "unscored"
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key
@@ -44,7 +45,7 @@ Mintfight.Attack {
         return {
             key = key,
             vars = {
-                
+
             }
         }
     end,
@@ -76,7 +77,7 @@ Mintfight.Attack {
             }
         end
     end,
-    
+
     calculate = function(self, card, context)
         if context.before and card.ability.extra.ready then
             local target
@@ -98,6 +99,7 @@ Mintfight.Attack {
                                 return true
                             end
                         })
+                        delay(0.5)
                         G.E_MANAGER:add_event(Event{
                             func = function ()
                                 assert(SMODS.change_base(target, nil, 'Ace'))
@@ -105,6 +107,7 @@ Mintfight.Attack {
                                 return true
                             end
                         })
+                        delay(0.5)
                         G.E_MANAGER:add_event(Event{
                             func = function ()
                                 target:flip()

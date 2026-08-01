@@ -15,16 +15,17 @@ Mintfight.Attack {
 
     artfight_credit = {
         team = "Comedy",
-        name = "Technically_no"
+        name = "Technically_no",
+        year = "2026",
     },
 
     rarity = 1,
-    cost = 5,
+    cost = 1,
     unlocked = true,
     discovered = false,
-    eternal_compat = true,
+    eternal_compat = false,
     perishable_compat = true,
-    blueprint_compat = true,
+    blueprint_compat = false,
     demicoloncompat = false,
     
     config = {

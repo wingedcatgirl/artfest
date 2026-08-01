@@ -38,16 +38,17 @@ Mintfight.Attack {
 
     artfight_credit = {
         team = "Tragedy",
-        name = "mikufanclub"
+        name = "mikufanclub",
+        year = "2026",
     },
 
-    rarity = 1,
-    cost = 5,
+    rarity = 2,
+    cost = 6,
     unlocked = true,
     discovered = false,
     eternal_compat = true,
     perishable_compat = true,
-    blueprint_compat = true,
+    blueprint_compat = false,
     demicoloncompat = false,
 
     --[[
@@ -59,7 +60,7 @@ Mintfight.Attack {
     --]]
 
     attributes = {
-
+        "prevents_death", "destroy_card"
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key

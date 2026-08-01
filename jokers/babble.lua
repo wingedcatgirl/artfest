@@ -16,9 +16,10 @@ Mintfight.Attack {
     artfight_credit = {
         name = "babblerabbit",
         team = "Comedy",
+        year = "2026",
     },
 
-    rarity = 1,
+    rarity = 2,
     cost = 5,
     unlocked = true,
     discovered = false,

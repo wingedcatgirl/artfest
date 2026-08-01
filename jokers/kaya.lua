@@ -16,16 +16,17 @@ Mintfight.Attack {
     artfight_credit = {
         name = "Beeeenoz",
         team = "Tragedy",
+        year = "2026",
     },
 
-    rarity = 1,
-    cost = 5,
+    rarity = 3,
+    cost = 9,
     unlocked = true,
     discovered = false,
     eternal_compat = true,
     perishable_compat = true,
     blueprint_compat = true,
-    demicoloncompat = false,
+    demicoloncompat = true,
     
     config = {
         extra = {
@@ -35,7 +36,7 @@ Mintfight.Attack {
     },
 
     attributes = {
-
+        "ace", "xmult", "rank"
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key
@@ -49,6 +50,12 @@ Mintfight.Attack {
     end,
     
     calculate = function(self, card, context)
+        if context.forcetrigger then
+            return {
+                xmult = card.ability.extra.all_aces_xmult
+            }
+        end
+
         if context.joker_main then
             local an_ace, all_aces = false, true
             for i,v in ipairs(context.scoring_hand) do

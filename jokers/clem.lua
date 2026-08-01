@@ -15,17 +15,18 @@ Mintfight.Attack {
 
     artfight_credit = {
         team = "Tragedy",
-        name = "nightlightyyy"
+        name = "nightlightyyy",
+        year = "2026",
     },
 
-    rarity = 1,
-    cost = 5,
+    rarity = 2,
+    cost = 6,
     unlocked = true,
     discovered = false,
     eternal_compat = true,
     perishable_compat = true,
     blueprint_compat = true,
-    demicoloncompat = false,
+    demicoloncompat = true,
 
     config = {
         extra = {
@@ -34,7 +35,7 @@ Mintfight.Attack {
     },
 
     attributes = {
-
+        "generation", "enhancements", "seals", "editions"
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key
@@ -48,7 +49,7 @@ Mintfight.Attack {
     end,
 
     calculate = function(self, card, context)
-        if context.setting_blind then
+        if context.setting_blind or context.forcetrigger then
             local any_improvable = false
             for i,v in ipairs(G.playing_cards) do
                 if not (v.edition and v.seal and v.center_key ~= "c_base") then
@@ -118,7 +119,7 @@ Mintfight.Attack {
 
             playing_card_joker_effects(cards)
 
-            if not context.blueprint then 
+            if not context.blueprint and not context.forcetrigger then
                 delay(1.5)
                 G.E_MANAGER:add_event(Event {
                     func = function()

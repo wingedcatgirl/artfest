@@ -13,7 +13,8 @@ Mintfight.Attack {
     },
     artfight_credit = {
         team = "Mystery",
-        name = "projectpurr"
+        name = "projectpurr",
+        year = "2026",
     },
     rarity = 1,
     cost = 6,
@@ -33,7 +34,7 @@ Mintfight.Attack {
     --]]
 
     attributes = {
-
+        "enhancements", "modify_card"
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key

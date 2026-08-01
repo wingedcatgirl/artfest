@@ -18,7 +18,8 @@ Mintfight.Attack {
     --[[
     artfight_credit = {
         name = "",
-        team = "",
+        team = "",,
+        year = "202 ",
     },
     --]]
 

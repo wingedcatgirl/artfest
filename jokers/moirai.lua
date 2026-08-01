@@ -16,16 +16,17 @@ Mintfight.Attack {
     artfight_credit = {
         name = "artsyGeek",
         team = "Mystery",
+        year = "2026",
     },
 
-    rarity = 1,
-    cost = 5,
+    rarity = 2,
+    cost = 4,
     unlocked = true,
     discovered = false,
     eternal_compat = true,
     perishable_compat = true,
     blueprint_compat = true,
-    demicoloncompat = false,
+    demicoloncompat = true,
 
     config = {
         extra = {
@@ -44,7 +45,7 @@ Mintfight.Attack {
     },
 
     attributes = {
-
+        "generation" --future "cares about destroyed cards" attribute?
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key
@@ -163,7 +164,7 @@ Mintfight.Attack {
             card.ability.extra.remembered_front = last.config.card_key
         end
 
-        if context.setting_blind then
+        if context.setting_blind or context.forcetrigger then
             local ispc = {
                 Default = true,
                 Base = true,

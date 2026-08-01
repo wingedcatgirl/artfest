@@ -13,16 +13,17 @@ Mintfight.Attack {
     },
     artfight_credit = {
         team = "Mystery",
-        name = "SpoxxieRuckus"
+        name = "SpoxxieRuckus",
+        year = "2026",
     },
     rarity = 1,
-    cost = 5,
+    cost = 7,
     unlocked = true,
     discovered = false,
     eternal_compat = true,
     perishable_compat = true,
     blueprint_compat = true,
-    demicoloncompat = false,
+    demicoloncompat = true,
     config = {
         extra = {
             
@@ -44,7 +45,7 @@ Mintfight.Attack {
         }
     end,
     calculate = function(self, card, context)
-        if context.setting_blind then
+        if context.setting_blind or context.forcetrigger then
             return {
                 message = "Supplies!",
                 func = function()

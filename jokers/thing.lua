@@ -14,10 +14,11 @@ Mintfight.Attack {
     },
     artfight_credit = {
         team = "Tragedy",
-        name = "RabAlienThing"
+        name = "RabAlienThing",
+        year = "2026",
     },
-    rarity = 1,
-    cost = 5,
+    rarity = 3,
+    cost = 9,
     unlocked = true,
     discovered = false,
     eternal_compat = true,
@@ -28,12 +29,12 @@ Mintfight.Attack {
     config = {
         extra = {
             luck = 1,
-            odds = 3
+            odds = 2
         }
     },
 
     attributes = {
-
+        "chance", "space", "level_up"
     },
     loc_vars = function(self, info_queue, card)
         local key = self.key
